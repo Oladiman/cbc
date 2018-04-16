@@ -5,7 +5,9 @@ from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
 import sys
 from django.utils.text import slugify
-from django.db.models.signals import pre_save
+from django.db.models.signals import pre_save, pre_delete
+import cloudinary
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -30,7 +32,8 @@ class Product(models.Model):
     category = models.CharField(max_length=120, choices=CATEGORY_CHOICES, default='11')
     price = models.DecimalField(decimal_places=2, max_digits=10)
     negotiable = models.BooleanField(default=True)
-    image = models.ImageField(upload_to='product_pic')
+    # image = models.ImageField(upload_to='product_pic')
+    image = CloudinaryField('image')
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
     state = models.CharField(max_length=30, null=True)
     campus = models.CharField(max_length=50, null=True)
@@ -39,23 +42,23 @@ class Product(models.Model):
     def __str__(self):
         return self.name
     
-    def save(self):
-        #Opening the uploaded image
-        im = Image.open(self.image)
+    # def save(self):
+    #     #Opening the uploaded image
+    #     im = Image.open(self.image)
 
-        output = BytesIO()
+    #     output = BytesIO()
 
-        #Resize/modify the image
-        im = im.resize( (208,183) )
+    #     #Resize/modify the image
+    #     im = im.resize( (208,183) )
 
-        #after modifications, save it to the output
-        im.save(output, format='JPEG', quality=100)
-        output.seek(0)
+    #     #after modifications, save it to the output
+    #     im.save(output, format='JPEG', quality=100)
+    #     output.seek(0)
 
-        #change the imagefield value to be the newley modifed image value
-        self.img = InMemoryUploadedFile(output,'ImageField', "%s.jpg" %self.image.name.split('.')[0], 'image/jpeg', sys.getsizeof(output), None)
+    #     #change the imagefield value to be the newley modifed image value
+    #     self.img = InMemoryUploadedFile(output,'ImageField', "%s.jpg" %self.image.name.split('.')[0], 'image/jpeg', sys.getsizeof(output), None)
 
-        super(Product,self).save()
+    #     super(Product,self).save()
 
 def create_slug(instance, new_slug=None):
     slug = slugify(instance.name)
@@ -73,6 +76,11 @@ def pre_save_post_receiver(sender, instance, *args, **kwargs):
         instance.slug = create_slug(instance)
 
 pre_save.connect(pre_save_post_receiver, sender=Product)
+
+def photo_delete(sender, instance, **kwargs):
+    cloudinary.uploader.destroy(instance.image.public_id)
+
+pre_delete.connect(photo_delete, sender=Product)
 
 class Cart(models.Model):
     user = models.ForeignKey(User, related_name='cart', on_delete=models.CASCADE)

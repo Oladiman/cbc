@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 from decouple import config
 import dj_database_url
+import cloudinary
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -46,7 +47,14 @@ INSTALLED_APPS = [
     'accounts',
     'crispy_forms',
     'storages',
+    'cloudinary',
 ]
+
+cloudinary.config(
+    cloud_name = config("CLOUD_NAME"),
+    api_key = config("API_KEY"),
+    api_secret = config("API_SECRET")
+)
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 

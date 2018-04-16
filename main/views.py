@@ -79,6 +79,7 @@ def add_product(request, slug):
 def sell_form(request):
     form = ProductForm(request.POST or None, request.FILES or None)
     if form.is_valid():
+        print("It got here")
         new_product = form.save(commit=False)
         new_product.seller = request.user
         new_product.save()
