@@ -1,0 +1,341 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Home | CBC</title>
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	
+	<link href="{% static 'css/price-range.css' %}" rel="stylesheet">
+	<link href="{% static 'css/animate.css' %}" rel="stylesheet">
+	<link href="{% static 'css/main.css' %}" rel="stylesheet">
+	<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+	<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+	<link rel="shortcut icon" href="{% static 'images/ico/favicon.ico' %}">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'images/ico/apple-touch-icon-144-precomposed.png' %}">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'images/ico/apple-touch-icon-114-precomposed.png' %}">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'images/ico/apple-touch-icon-72-precomposed.png' %}">
+	<link rel="apple-touch-icon-precomposed" href="{% static 'images/ico/apple-touch-icon-57-precomposed.png' %}">
+	<style>
+            .fav { max-width: 40px; } 
+        {% block head_extra %}{% endblock head_extra %}
+    </style>
+</head>
+<!--/head-->
+
+<body>
+	<header id="header">
+		<!--header-->
+		<div class="header-middle">
+			<!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							<a href="/">
+								<img src="{% static 'images/LOGO.jpg' %}" class="fav" alt="" />
+							</a>
+						</div>
+
+					</div>
+					<div class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+
+								{% if request.user.is_authenticated %}
+								<li>
+										<a href="/sell">
+											<i class="fa fa-tags"></i> Sell</a>
+									</li>
+								<li>
+									<a href="/accounts/{{ request.user.username }}">
+										<i class="fa fa-user"></i> Account</a>
+								</li>
+								<li>
+									<a href="/cart">
+										<i class="fa fa-shopping-cart"></i> Cart</a>
+								</li>
+								<li>
+									<a href="/logout">
+										<i class="fa fa-sign-out"></i> Logout</a>
+								</li>
+								{% else %}
+								<li>
+									<a href="/login">
+										<i class="fa fa-lock"></i> Login</a>
+								</li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/header-middle-->
+
+		<div class="header-bottom">
+			<!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li>
+									<a href="/" {% if not active %}class='active'{% endif %}>Home</a>
+								</li>
+								<li>
+									<a href="/my-products" {% if active %}class='active'{% endif %}>My Products
+									</a>
+								</li>
+
+								<li>
+									<a href="/contact-us">Contact Us</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="search_box pull-right">
+                            <form>
+                            <input type="text" name="q" placeholder="Search" value='{{ request.GET.q }}' />
+                            </form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/header-bottom-->
+	</header>
+	<!--/header-->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="left-sidebar">
+                        <h2>CATEGORIES</h2>
+                        <div class="panel-group category-products" id="accordian">
+                            <!--category-productsr-->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href='/categories/1'>
+                                            Phone, Tablets and Computers
+                                        </a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href='/categories/2'>
+                                            Phone, Tablets and Computers Accessories
+                                        </a>
+                                    </h4>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href='/categories/3'>
+                                            Clothings and Accessories
+                                        </a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href="/categories/4">Electronics</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href="/categories/5">Artwork</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href="/categories/6">Health & Beauty</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href="/categories/7">Home materials and furniture</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href="/categories/8">Kid & Babies</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href="/categories/9">Hostel and Accommodation</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href="/categories/10">Jobs and Services</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href="/categories/11">Miscellaneous</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/category-products-->
+
+                        <div class="price-range"><!--price-range-->
+							<h2>Price Range</h2>
+							<form>
+							    From:<br><input type="number" name="from" value='{{ request.GET.from }}' required><br>
+								To:<br><input type="number" name="to"  value='{{ request.GET.to }}' required>
+                                <input type='submit' value='Filter'>
+                            </form>
+						</div><!--/price-range-->
+
+                    </div>
+                </div>
+                {% block content %}{% endblock content %}
+            </div>
+        </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <!--Footer-->
+
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Service</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li>
+                                    <a href="/contact-us.html">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Quick Shop</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li>
+                                    <a href="/categories/1">Phones</a>
+                                </li>
+                                <li>
+                                    <a href="/categories/1">Tablets</a>
+                                </li>
+                                <li>
+                                    <a href="/categories/4">Electronics</a>
+                                </li>
+                                <li>
+                                    <a href="/categories/7">Home Materials</a>
+                                </li>
+                                <li>
+                                    <a href="/categories/9">Real Estate</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Policies</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li>
+                                    <a href="#">Terms of Use</a>
+                                </li>
+                                <li>
+                                    <a href="#">Privacy Policy</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>About CBC</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li>
+                                    <a href="#">Company Information</a>
+                                </li>
+                                <li>
+                                    <a href="#">Copyright</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <div class="single-widget">
+                            <h2>About CBC</h2>
+                            <form action="#" class="searchform">
+                                <input type="text" placeholder="Your email address" />
+                                <button type="submit" class="btn btn-default">
+                                    <i class="fa fa-arrow-circle-o-right"></i>
+                                </button>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <p class="text-center">Copyright © 2018 CBC Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!--/Footer-->
+
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/price-range.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    
+    
+    <script src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>{% block javascript %}{% endblock javascript %}</script>
+</body>
+
+</html>

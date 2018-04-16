@@ -1,0 +1,45 @@
+{% extends 'base.html' %} 
+{% load staticfiles %} 
+{% block head_extra %} 
+	.raul {
+		height: 150px;
+	}
+
+{% endblock head_extra%}
+				{% block content %}
+				<div class="col-sm-9 padding-right">
+					<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">My Products</h2>
+						{% for product in products %}
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+										<a href="/product-details/{{ product.slug }}">
+									<div class="productinfo text-center">
+										<img src="{{ product.image.url }}" class='raul img-responsive' alt="" />
+										<h2>₦{{ product.price }}</h2>
+										<p>{{ product.name }}</p>
+										<a href="/delete-product/{{ product.slug }}" class="btn btn-danger add-to-cart"><i class="fa fa-trash-o"></i>Delete Product</a>
+									</div></a>
+				
+								</div>
+								
+							</div>
+						</div>
+						{% endfor %}
+						
+						
+						<!--<ul class="pagination">
+							<li class="active"><a href="">1</a></li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">&raquo;</a></li>
+						</ul>-->
+					</div><!--features_items-->
+				</div>
+				{% endblock %}
+			</div>
+		</div>
+	</section>
+	
+	

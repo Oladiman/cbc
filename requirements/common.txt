@@ -1,0 +1,4 @@
+Django==1.10
+django-pagination
+django-tastypie
+South

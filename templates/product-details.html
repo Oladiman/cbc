@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head_extra %}
+			.fav {
+				max-width: 40px;
+			}
+{% endblock head_extra %}
+				{% block content %}
+				<div class="col-sm-9 padding-right">
+					<div class="product-details"><!--product-details-->
+						<div class="col-sm-5">
+							<div class="view-product">
+								<img src="{{ product.image.url }}" alt="" />
+								
+							</div>
+							
+						</div>
+						<div class="col-sm-7">
+							<div class="product-information"><!--/product-information-->
+								
+								<h2>{{ product.name }}</h2>
+								<p>Seller: {{ product.seller.username }}</p>
+								<img src="" alt="" />
+								<span>
+									<span>₦{{ product.price }}</span>
+									
+									{% if seller %}
+									<a href="/delete-product/{{ product.slug }}"></a>
+									<button type="button" class="btn btn-danger cart">
+										<i class="fa fa-trash-o"></i>
+										Delete Product
+									</button></a>
+									{% else %}
+									<a href="/add-product/{{ product.slug }}"></a>
+									<button type="button" class="btn btn-default cart">
+										<i class="fa fa-shopping-cart"></i>
+										Add to cart
+									</button></a>
+									{% endif %}
+								</span>
+								
+								
+							</div><!--/product-information-->
+						</div>
+					</div><!--/product-details-->
+					
+					<div class="category-tab shop-details-tab"><!--category-tab-->
+						<div class="col-sm-12">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#details" data-toggle="tab">Details</a></li>
+								<li><a href="#reviews" data-toggle="tab">Contact Info</a></li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane fade active in" id="details" >
+									<p>{{ product.description }}</p>
+								
+							</div>
+							
+							
+							
+							<div class="tab-pane fade" id="reviews" >
+								<div class="col-sm-12">
+									<ul>
+										<li><a href="#"><i class="fa fa-user"></i>{{ product.seller.username }}</a></li>
+										<li><a href="#"><i class="fa fa-phone"></i>{{ product.seller.user.phone }}</a></li>
+										<li><a href="#"><i class="fa fa-envelope"></i>{{ product.seller.email }}</a></li>
+									</ul>
+									<p>{{ product.seller.user.bio }}</p>
+									
+									
+									
+								</div>
+							</div>
+							
+						</div>
+					</div><!--/category-tab-->
+					{% endblock content %}
+					

@@ -1,0 +1,26 @@
+<!doctype html>
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+<html>
+    <head>
+        <title>Account Information</title>
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    </head>
+    <body class="container">
+            <div class="col s12 m8 offset-m2">
+                    <div class="card">
+                      <div class="card-content">
+                      <h2 class="flow-text">Update your information</h2>
+                        <form action="." method="POST" class="padding">
+                          {% csrf_token %} {{ noodle_form|crispy }}
+                          <div class="divider"></div>
+                          {{ formset.management_form }}
+                              {{ formset|crispy }}
+                          <button type="submit" class="btn-floating btn-large waves-light waves-effect"><i class="large material-icons">Update Account Info</i></button>
+              
+                      </form>
+                      </div>
+                  </div>
+              </div>
+    </body>
+</html>
