@@ -1425,7 +1425,6 @@ h2.title {
 **************************/
 
 #form {
-  background-image: url("{% static 'images/login.jpg' %}");/*nothing*/
   display: block;
   margin-bottom: 185px;
   margin-top: 185px;
