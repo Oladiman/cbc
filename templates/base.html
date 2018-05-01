@@ -50,7 +50,12 @@
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 
-								{% if request.user.is_authenticated %}
+                                {% if request.user.is_authenticated %}
+                                <li>
+                                    <a href="/"> 
+                                        <img src="{% static 'images/home' %}" />
+                                    </a>
+                                </li>
 								<li>
 										<a href="/sell">
 											<i class="fa fa-tags"></i> Sell</a>
