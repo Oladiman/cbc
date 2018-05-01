@@ -25,111 +25,6 @@ class Product(models.Model):
         ('10', 'Jobs and Services'),
         ('11', 'Miscellaneous')
     )
-    STATE_CHOICES = (
-        ('1',	'ABIA'),
-        ('2',	'ADAMAWA'),
-        ('3',	'AKWA IBOM'),
-        ('4',	'ANAMBRA'),
-        ('5',	'BAUCHI'),
-        ('6',	'BAYELSA'),
-        ('7',	'BENUE'),
-        ('8',	'BORNO'),
-        ('9',	'CROSS RIVER'),
-        ('10',	'DELTA'),
-        ('11',	'EBONYI'),
-        ('12',	'EDO'),
-        ('13',	'EKITI'),
-        ('14',	'ENUGU'),
-        ('15',	'FCT'),
-        ('16',	'GOMBE'),
-        ('17',	'JIGAWA'),
-        ('18',	'KADUNA'),
-        ('19',	'KANO'),
-        ('20',	'KATSINA'),
-        ('21'	'KEBBI'),
-        ('22'   'KOGI'),
-        ('23'	'KWARA'),
-        ('24'	'LAGOS'),
-        ('25'	'NIGER'),
-        ('26'	'NASSARAWA'),
-        ('27'	'OGUN'),
-        ('28'	'ONDO'),
-        ('29'	'OSUN'),
-        ('30'	'OYO'),
-        ('31'	'PLATEAU'),
-        ('32'	'RIVERS'),
-        ('33'	'SOKOTO'),
-        ('34'	'TARABA'),
-        ('35'	'YOBE'),
-        ('36'  'ZAMFARA')
-)
-CAMPUS_CHOICES=(
-   ( 'Gregory University'),
-  (  'America University of Nigeria'),
-  ( ' Akwa Ibom State University'),
-    ('Anambra State University'),
-   ( 'Abubakar Tafawa Balewa University'),
-   (' Benue State University'),
-   ( 'Cross River University of Technology'),
-  ( ' University of Calabar'),
-   (' Delta State University, Abraka'),
-    ('Michael and Cecilia Ibur University'),
-   (' Ebonyi State University'),
-   (' Ambrose Alli University'),
-(' Benson Idahosa University'),
-    ('Igbinedion University'),
-   ( 'University of Benin'),
-   (' Afe Babalola University'),
-   ( 'Ekiti State University'),
-   (' Federal University Oye'),
-   ( 'Federal polytechnic Ado'),
-   (' Caritas University'),
-   (' Godfrey Okoye University'),
-   (' University of Nigeria, Nsukka'),
-    ('University of Abuja'),
-   ( 'Nigerian Turkish Nile University'),
-  ( ' Veritas University(Catholic University of Nigeria)'),
-  ( ' Amadu Bello University'),
-  ( ' City Univerity of Technology'),
-  ( ' Bayero University'),
-  ( ' Fedral University, Dustin-Ma'),
-   ( 'Umaru Musa Yar’adua University'),
-   (' Kogi State University'),
-   (' University of Ilorin'),
-   ( 'Al-Hikmah University'),
-  ( ' Landmark University'),
-  ( ' CETEP City University),
-    ('Caleb University'),
-   (' City University'),
-  ( ' Lagos State University'),
-  ( ' University of Lagos'),
-   (' ECWA Bingham University'),
-   (' Babcock University'),
-   ( 'Bells University of Technology'),
-   (' Crawford University'),
-    ('Crescent University'),
-   (' Covenant University'),
-   (' Adekunle Ajasin University'),
-   (' Achievers University'),
-   ( 'Elizade University'),
-   (' Federal University of Technology Akure'),
-  ( ' Obafemi Awolowo University')
-   (' Joseph Ayo Babalola'),
-   (' Reedemers University'),
-   (' Bowen University'),
-   ( 'Fountain University'),
-   (' Oduduwa University'),
-   (' The Poly Ife'),
-   (' Ede Polytechnic'),
-   (' Ajayi Crowther University'),
-   (' Koladaisi University'),
-    ('University of Ibadan'),,
-   (' Ibadan Poly'),
-    ('University of Portharcourt'),
-   (' Taraba State University'),
-   (' Bukar Abba Ibrahim University'),
-)
-
     seller = models.ForeignKey(User, related_name='selling', on_delete=models.CASCADE)
     name = models.CharField(max_length=150)
     slug = models.SlugField(unique=True, null=True, blank=True)
@@ -140,8 +35,8 @@ CAMPUS_CHOICES=(
     # image = models.ImageField(upload_to='product_pic')
     image = CloudinaryField('image')
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
-    state = models.CharField(max_length=50,choices=STATE_CHOICES, default='1')
-    campus = models.CharField(max_length=500,choices=CAMPUS_CHOICES, default='')
+    state = models.CharField(max_length=30, null=True)
+    campus = models.CharField(max_length=50, null=True)
     selling_type = models.CharField(max_length=50, null=True)
 
     def __str__(self):
