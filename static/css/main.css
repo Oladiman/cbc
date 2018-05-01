@@ -714,14 +714,14 @@ h2.title:before{
 }
 
 .category-products .panel-default .panel-heading {
-  background-color: #FFFFFF;
+  background-color: #FE980F;
   border: 0 none;
   color: #FFFFFF;
   padding: 5px 20px;
 }
 
 .category-products .panel-default .panel-heading .panel-title a {
-  color: #696763;
+  color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   text-decoration: none;
