@@ -1,0 +1,238 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Privacy Policy | CBC</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    
+    <link href="{% static 'css/price-range.css' %}" rel="stylesheet">
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+	<link href="{% static 'css/main.css' %}" rel="stylesheet">
+	<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+	<style>
+			.fav {
+				max-width: 40px;
+			}
+		</style>
+</head><!--/head-->
+
+<body>
+	<header id="header"><!--header-->
+		<div class="header_top"><!--header_top-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="contactinfo">
+							<ul class="nav nav-pills">
+								<li><a href=""><i class="fa fa-phone"></i>+234 81 3346 3077</a></li>
+								<li><a href="mailto:campusbuyersconnect@gmail.com" target="_blank"><i class="fa fa-envelope"></i> info@cbc.com</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="social-icons pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="https://www.facebook.com/connect.campusbuyers"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="https://twitter.com/c_b_connect"><i class="fa fa-twitter"></i></a></li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header_top-->
+		
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							<a href="/"><img src="{% static 'images/LOGO.jpg' %}" class="fav" alt="" /></a>
+						</div>
+						
+					</div>
+					<div class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+									{% if request.user.is_authenticated %}
+									<li><a href="#"><i class="fa fa-user"></i> Account</a></li>
+									<li><a href="/cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+									<li><a href="/logout"><i class="fa fa-lock"></i> Logout</a></li>
+									{% else %}
+									<li><a href="/login"><i class="fa fa-lock"></i> Login</a></li>
+									{% endif %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+	
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a href="/">Home</a></li>
+								<li><a href="/my-products">My Products</a>
+                                    
+                                </li> 
+								
+								<li><a href="contact-/us" class="active">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="search_box pull-right">
+							<input type="text" placeholder="Search"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-bottom-->
+	</header><!--/header-->
+	 <p align="center"><strong>Privacy Policy - CBC Nigeria</strong></p>
+<p align="center">We respect your privacy and have developed a detailed Privacy Policy.  Please take the time to read our Privacy Policy below. By accessing our website  or our mobile app and by using our services, you are also accepting the terms  of our Privacy Policy.<br>
+  You should be aware that when you click certain links on our website or  within our app you could be directed to other companies&rsquo; properties outside of  our hosted environment where the information collected is outside of our direct  control. The privacy policy of the third parties&rsquo; properties or applications  will govern the information obtained from you by these third parties in those  contexts.<br>
+  <strong>1. INFORMATION WE COLLECT, RECEIVE AND HOST</strong> <br>
+  Account and Profile Information: When you use our Services we may require  and use certain information such as a valid email address and password. In  addition, users may create a profile that includes information such as their  geography, first and last name, gender, phone number, interests and associated  information, including photos they may wish to upload. Any information users  share in publicly-available profiles is their own responsibility. You should  carefully consider the risks of making certain personal  information&mdash;particularly information such as address or precise location  information&mdash;publicly available. Where a user has decided to login to our site  using a third-party authentication service such as Facebook Connect, we may  also receive additional profile or other information authorized by that  provider.</p>
+<p align="center"><strong>Listings and Transactions</strong>: We may host the information, including personal  information and contact information, valid contact information and password  necessary to provide our Services. Much of the same information used to create  an account or profile may be required to post a listing. Any information users  share in listings is their own responsibility. Like with profiles, users should  carefully consider the risks of making certain personal  information&mdash;particularly information such as address or precise location information&mdash;publicly  available in a listing.<strong></strong></p>
+<p align="center"><strong>Games, Advertising and Promotions</strong>: We may collect personal  information such as your name and contact information when you participate in  games, quizzes or other marketing promotions we sponsor on our site or on  third-party sites. We may also process information related to the effectiveness  of our advertising campaigns, including what ads are viewed and clicked either  on our network or on third- party sites.</p>
+<p align="center"><strong>Customer Care</strong>: When you contact our customer care department, we may  collect the personal information necessary to fulfil your request and to  contact you for follow up as needed. We may also contact you using existing  account contact information you provide to us for this purpose. We may also  collect other information about our communications with our users, for example  any user support requests that our users make or any feedback that our users  provide to us.</p>
+<p align="center"><strong>Website and Mobile Data</strong>:We may automatically receive and log information on our  servers from your browser or device including your IP address, software and  hardware attributes, pages that you request, mobile identifiers, information  about app usage, and other device or systems-level information. This can occur  on our website or mobile app, or on third parties&rsquo; services.</p>
+<p align="center"><strong>Appended Information</strong>: We may also append information we lawfully obtain from  business partners or third parties to existing data we hold about our users.</p>
+<p align="center"><strong>2. IP ADDRESS, COOKIES &amp; MOBILE IDENTIFIERS</strong><br>
+  We may collect certain information through technology like cookies, pixels  and local storage (like on your browser or device). Cookies are small text  files that store information on your computer, mobile phone or other device  locally. Pixels are small images that are part of codes on webpages that do  things like allow another server to measure viewing of a webpage and often are  used in connection with cookies. The code trackes if and when (and on which  page) a pixel is loaded to indicate that a user has engaged with a specific  screen or portion of a screen.</p>
+<p align="center">With the help of cookies, the web server can save, for instance,  preferences and settings on the user&rsquo;s computer, mobile phone or other device  which are then automatically restored on the next visit. Or to put it another  way, the cookies are used, among other things, to make the use of the site more  user- friendly so that, for instance, you do not have to repeat the log-in  process when you visit again. We use both persistent cookies and session  cookies. Whereas persistent cookies remain on your computer for a longer period  of time, session cookies are automatically deleted when the browser window is  closed.</p>
+<p align="center">We may allow third parties such as advertising or analytics providers to  collect information using these types of technologies directly on our website  or from our mobile application. The data that they collect is subject to the  applicable privacy policy of those third parties.</p>
+<p align="center"><strong>3. USE OF THIS INFORMATION</strong></p>
+<p align="center">&nbsp;</p>
+<p align="center">i. To  provide our service we may use the information we collect and host for the  following general purposes:<br>
+  ii. to  provide customer services, including to create and manage user accounts, to  resolve technical difficulties and to enable features;<br>
+  iii. to  customize offers and experiences, including advertising on our properties or  third parties&rsquo; properties;<br>
+  iv. to  monitor general and individual user activity, such as keyword searches,  postings and transactional activity, and to manage traffic on the Website;<br>
+  v. to  contact our users, including for service matters, customer care or permitted  marketing communications via any available communications channels;<br>
+  vi. to  undertake research initiatives and to perform analytics to improve our  services; and<br>
+  to enforce our Terms of Use including to combat fraud and abuse.</p>
+<p align="center">vii. We  may retain information that we collect and observe on our network only for as  long as is required to fulfil the above business objectives.</p>
+<p align="center"><strong>4. INFORMATION SHARING</strong><br>
+  We do not share personal information about our users with non-affiliated  third parties unless we have our users&rsquo; specific permission to do so, or in the  following circumstances:</p>
+<ul>
+  <li>We may use third-party service providers to assist in  offering aspects of our services, in which case they shall have no authority to  independently use any personal information they process on our behalf, and  shall be subject to the terms of this Privacy Policy.</li>
+  <li>We reserve the right to share information with private or  public authorities that will enable us to fight fraud and abuse on our network,  to investigate suspected violations of law, or to fight any other suspected  breach of our terms of service.</li>
+  <li>We may share personal information with government  authorities as required by applicable law.</li>
+</ul>
+<p align="center">As a matter of policy we do not rent or sell personal information about our  users with non-affiliated third parties unless we have our users&rsquo; specific  permission to do so. In the event that our business or a division of our business  is reorganized or sold and we transfer all or substantially all of our assets  to a new owner, your personal information may be transferred to the buyer to  enable continuity of service.</p>
+<p align="center">We may share certain non-personal information (data that does not identify  our users individually) with third-party service providers, trusted partners or  approved researchers in order to better understand what advertisements or  services may interest you, to improve the overall quality and effectiveness of  our services or their services, or to contribute to academic research that we  believe is of broader social benefit.</p>
+<p align="center"><strong>5. USER CONTROLS</strong><br>
+  Access, Correction and Deletion: For users that have created an account or  listing with us, you can access, correct or delete your personal information by  writing to us at the following address: support@CBC.com.ng. You are responsible  for keeping the data you provide or post on our network accurate. If your  account was created through an identity provider (e.g. Facebook Connect) you  may also disable or change the account information through the settings offered  by the identity provider (e.g. on Facebook.com).</p>
+<p align="center">Third Party Choice: Certain third parties active on our site, e.g. Google  Adwords, give you the ability to opt out of their collection and use of  information for interest-based advertising. You can visit <a href="http://www.youronlinechoices.com"><strong>Error!  Hyperlink reference not valid.</strong></a> or <a href="http://www.networkadvertising.org"><strong>Error!  Hyperlink reference not valid.</strong></a> to learn more about this practice  and to exercise choices over how this type of information may be collected and  used.</p>
+<p align="center"><strong>Cookies</strong>: Most major desktop and mobile web browsers (e.g Safari,  Firefox, Internet Explorer, Chrome, Opera) provide controls that allow you to  limit or block the setting of cookies on your systems. Note that disabling  cookies in your browser for either first-party domains (the sites you actively  visit) or third-party domains (companies other than those you directly visit on  the Web) may result in decreased functionality in certain instances.<br>
+    <strong>6. SECURITY</strong><br>
+  All information we collect is protected by reasonable technical means and  reasonable security procedures in order to prevent unauthorized access or use  of data. Our affiliates, trusted partners and third-party service providers  have committed to manage the information in accordance with our requirements  for security and privacy.<br>
+  <strong>7. CONTACT INFORMATION</strong><br>
+  Questions about this Privacy Policy and/or the Terms of Use can be directed  to info@CBC.com.ng.</p>
+
+	<footer id="footer"><!--Footer-->
+		
+		<div class="footer-widget">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Service</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="/contact-us">Contact Us</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Quick Shop</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="/categories/1">Phones</a></li>
+								<li><a href="/categories/1">Tablets</a></li>
+								<li><a href="/categories/4">Electronics</a></li>
+								<li><a href="/categories/7">Home Materials</a></li>
+								<li><a href="/categories/9">Real Estate</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Policies</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="/Terms-of-use">Terms of Use</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>About CBC</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="/about-cbc">Company Information</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3 col-sm-offset-1">
+						<div class="single-widget">
+							<h2>About CBC</h2>
+							<form action="mailto:campusbuyersconnect.com" target="_blank" class="searchform">
+								<input type="text" placeholder="Your email address" />
+								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+								
+							</form>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<p class="text-center">Copyright © 2018 CBC Inc. All rights reserved.</p>
+				</div>
+			</div>
+		</div>
+		
+	</footer><!--/Footer-->
+	
+
+  
+    <script src="{% static 'js/jquery.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="{% static 'js/gmaps.js' %}"></script>
+	<script src="{% static 'js/contact.js' %}"></script>
+	<script src="{% static 'js/price-range.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
