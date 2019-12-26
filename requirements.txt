@@ -27,6 +27,6 @@ s3transfer==0.1.13
 six==1.11.0
 static3==0.7.0
 urllib3==1.22
-waitress==1.1.0
+waitress==1.4.1
 whitenoise==3.3.1
 wrapt==1.10.11
